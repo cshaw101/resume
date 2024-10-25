@@ -1,0 +1,179 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #EAEAEA; /* Light text */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Main Container */
+.App {
+  max-width: 800px;
+  background-color: #1E1E1E; /* Dark card color */
+  border-radius: 12px;
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Section Styles */
+section {
+  background: #1F1F1F;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  transform: translateY(30px);
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Accent Line for Section Titles */
+section h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #00ADB5; /* Accent color */
+  border-bottom: 3px solid #00ADB5;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+/* Text Styles */
+p, ul {
+  line-height: 1.6;
+  color: #CCCCCC;
+  font-size: 1.1em;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li::before {
+  content: "•";
+  color: #00ADB5; /* Accent bullet color */
+  padding-right: 8px;
+}
+
+/* Animated Fade-in Keyframe */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Button Styles */
+button {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #00ADB5, #00FFB5);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00FFB5, #00ADB5);
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Fade In Animation for Main Container */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Contact Info Styles */
+#about p {
+  font-size: 1.1em;
+  color: #EAEAEA;
+}
+
+#about a {
+  text-decoration: none;
+  color: #00ADB5;
+}
+
+/* Adjust container padding and card spacing on smaller screens */
+@media (max-width: 768px) {
+  .App {
+      padding: 20px;
+  }
+  
+  section {
+      padding: 15px;
+  }
+  
+  /* Adjust header font sizes for better readability on mobile */
+  header h1 {
+      font-size: 2em;
+  }
+  
+  section h2 {
+      font-size: 1.6em;
+  }
+  
+  p, ul {
+      font-size: 1em;
+  }
+  
+  /* Button adjustments for smaller screens */
+  button {
+      padding: 10px 20px;
+      font-size: 1em;
+  }
+}
+
+/* Narrow Screen Adjustments for very small devices */
+@media (max-width: 480px) {
+  /* Center-align text on very small screens */
+  .App {
+      text-align: center;
+  }
+
+  /* Stack elements vertically in About and Skills sections */
+  #about, #skills {
+      display: block;
+  }
+  
+  /* Make text and sections more compact for small screens */
+  section h2 {
+      font-size: 1.5em;
+      margin-bottom: 8px;
+  }
+  
+  p, ul {
+      font-size: 0.95em;
+  }
+  
+  /* Adjust button size to fit screen width better */
+  button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+  }
+}
